@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/widget_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <!-- do no set android:alpha here, it can´t be overridden programmatically -->
+        <ImageView
+            android:id="@+id/widget_icon_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/profile_icon_background"
+            android:tint="#FF808080" />
+
+        <ImageView
+            android:id="@+id/widget_icon_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/profile_icon_swatches" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/widget_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:maxLines="1"
+        android:shadowColor="#FF000000"
+        android:shadowDx="1.0"
+        android:shadowDy="2.0"
+        android:shadowRadius="5.0"
+        android:text="@string/widget_loading"
+        android:textColor="#FFFFFFFF"
+        android:textSize="14dp"
+        tools:ignore="SpUsage" />
+
+</LinearLayout>

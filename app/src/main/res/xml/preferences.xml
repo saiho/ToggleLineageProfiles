@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/app_name">
+    <PreferenceCategory
+        android:key="category_profile_icons"
+        android:title="@string/pref_category_profile_icons_title" />
+    <PreferenceCategory android:title="@string/pref_category_colors_title">
+        <com.saiho.togglelineageprofiles.preferences.ColorPickerPreference
+            android:defaultValue="@color/default_icon_foreground"
+            android:key="foreground_color"
+            android:title="@string/pref_foreground_color_title"
+            app:showTransparencyBar="false" />
+        <com.saiho.togglelineageprofiles.preferences.ColorPickerPreference
+            android:defaultValue="@color/default_icon_background"
+            android:key="background_color"
+            android:title="@string/pref_background_color_title"
+            app:showTransparencyBar="true" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="category_profile_notifications"
+        android:title="@string/pref_category_profile_notifications_title" />
+    <PreferenceCategory
+        android:key="category_other"
+        android:title="@string/pref_category_other_title">
+        <SwitchPreference
+            android:key="quick_toggle"
+            android:summaryOff="@string/pref_quick_toggle_summary_off"
+            android:summaryOn="@string/pref_quick_toggle_summary_on"
+            android:title="@string/pref_quick_toggle_title" />
+    </PreferenceCategory>
+</PreferenceScreen>
+

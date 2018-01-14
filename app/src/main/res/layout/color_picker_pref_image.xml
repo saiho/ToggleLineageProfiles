@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/color_picker_pref_image"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:clickable="false"
+    android:focusable="false"
+    android:foreground="@drawable/color_picker_pref_image_foreground"
+    android:foregroundTint="@color/color_picker_pref_image_foreground"
+    android:minHeight="38dp"
+    android:minWidth="38dp"
+    android:src="@drawable/color_picker_pref_image" />
+

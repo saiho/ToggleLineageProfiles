@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+
+def sourceProfileIconList = new File(buildDir, "generated/source/lists")
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+    defaultConfig {
+        applicationId "com.saiho.togglelineageprofiles"
+        minSdkVersion 23
+        targetSdkVersion 27
+        versionCode 12
+        versionName '1.0.12'
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            java {
+                srcDirs += sourceProfileIconList
+            }
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation 'org.cyanogenmod:platform.sdk:6.0'
+}
+
+task generateProfileIconList {
+    doLast {
+        println "Generating ProfileIconList.java"
+        def content = "package com.saiho.togglelineageprofiles;\n"
+        content += "public final class ProfileIconList {\n"
+        content += "public static java.util.HashMap<String, Integer> ids = new java.util.HashMap<>();\n"
+        content += "static {\n"
+        file("\\src\\main\\res\\drawable-nodpi").listFiles(new FilenameFilter() {
+            @Override
+            boolean accept(File file, String name) {
+                return name.startsWith("profile_icon_") && name.endsWith(".png")
+            }
+        }).each {
+            def fileName = it.name[0..it.name.length() - 5]
+            content += "ids.put(\"" + fileName + "\", R.drawable." + fileName + ");\n"
+        }
+        content += "};\n"
+        content += "}"
+
+        def dir = new File(sourceProfileIconList, "com\\saiho\\togglelineageprofiles")
+        dir.mkdirs()
+        new File(dir, "ProfileIconList.java").text = content
+    }
+}
+preBuild.dependsOn generateProfileIconList

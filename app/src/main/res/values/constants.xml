@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_icon_background">#37707D</color>
+
+    <color name="default_icon_background">#C037707D</color>
+    <color name="default_icon_foreground">#FFFFFF</color>
+    <integer name="quick_toggle_delay_ms">1500</integer>
+
+    <!-- margin calculated as android.R.dialog_padding * 2 + extra = 16dp * 2 + 8dp -->
+    <dimen name="dialog_total_screen_margin">40dp</dimen>
+
+    <dimen name="select_icon_cell_padding">6dp</dimen>
+    <dimen name="select_icon_cell_size">80dp</dimen>
+    <dimen name="color_picker_preview_border_size">2dp</dimen>
+    <dimen name="color_picker_preview_corner_radius">2dp</dimen>
+    <dimen name="color_picker_bar_height">22dp</dimen>
+    <dimen name="color_picker_bar_vertical_padding">8dp</dimen>
+    <dimen name="color_picker_bar_corner_radius">4dp</dimen>
+    <dimen name="color_picker_alpha_background_tile_size">15dp</dimen>
+</resources>

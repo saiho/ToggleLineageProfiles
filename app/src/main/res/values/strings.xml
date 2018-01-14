@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Toggle Lineage Profiles</string>
+    <string name="app_description">This app allows to quickly toggle any of the system profiles defined in LineageOS/Cyanogenmod using a widget from the home screen.</string>
+    <string name="pref_category_profile_icons_title">Profile icons</string>
+    <string name="pref_category_colors_title">Icon colors</string>
+    <string name="pref_category_profile_notifications_title">Notifications</string>
+    <string name="pref_category_other_title">More settings</string>
+    <string name="pref_select_icon_title">Choose icon of \"%s\"</string>
+    <string name="pref_foreground_color_title">Choose foreground color of the icons</string>
+    <string name="pref_background_color_title">Choose background color of the icons</string>
+    <string name="pref_notify_title">Notify when \"%s\" is activated</string>
+    <string name="pref_quick_toggle_title">Enable quick toggle</string>
+    <string name="pref_quick_toggle_summary_off">When you click in the widget, a popup window will let you choose the new profile to activate.</string>
+    <string name="pref_quick_toggle_summary_on">When you click in the widget, the next profile of the list will be activated. By clicking multiple times you advance to desired profile.</string>
+    <string name="select_icon_dialog_title">Select the profile icon</string>
+    <string name="color_picker_dialog_title">Select color</string>
+    <string name="color_picker_argb">ARGB:</string>
+    <string name="color_picker_hue">Hue</string>
+    <string name="color_picker_saturation">Saturation</string>
+    <string name="color_picker_luminance">Luminance</string>
+    <string name="color_picker_alpha">Transparency</string>
+    <string name="widget_loading">Loading…</string>
+    <string name="widget_no_active_profile">No active profile</string>
+    <string name="msg_no_lineageos">This app works only on Android versions based on LineageOS/Cyanogenmod. Sorry, LineageOS/Cyanogenmod has not been detected.</string>
+    <string name="msg_disabled_profiles">The system profiles are not active. To activate them go to Settings / System Profiles.</string>
+    <string name="msg_no_profiles">There isn´t any system profile defined. To add some profile go to Settings / System Profiles.</string>
+    <string name="notification_title">Profile \"%s\" activated</string>
+</resources>

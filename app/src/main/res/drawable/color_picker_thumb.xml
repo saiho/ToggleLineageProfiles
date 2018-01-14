@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="22dp"
+        android:height="22dp"
+        android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="@color/color_picker_thumb_background" />
+        </shape>
+    </item>
+    <item
+        android:id="@+id/color_picker_thumb_foreground"
+        android:width="15dp"
+        android:height="15dp"
+        android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="@android:color/white" />
+        </shape>
+    </item>
+</layer-list>
