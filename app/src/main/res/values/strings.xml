@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Toggle Lineage Profiles</string>
-    <string name="app_description">This app allows to quickly toggle any of the system profiles defined in LineageOS/Cyanogenmod using a widget from the home screen.</string>
+    <string name="app_description">This app allows to quickly toggle any of the system profiles of LineageOS/Cyanogenmod using a widget from the home screen.</string>
     <string name="pref_category_profile_icons_title">Profile icons</string>
     <string name="pref_category_colors_title">Icon colors</string>
     <string name="pref_category_profile_notifications_title">Notifications</string>
