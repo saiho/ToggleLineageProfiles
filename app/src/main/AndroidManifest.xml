@@ -1,7 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.saiho.togglelineageprofiles">
 
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
 
     <application
         android:allowBackup="true"
@@ -38,6 +40,8 @@
             android:enabled="false"
             android:exported="true">
             <intent-filter>
+                <action android:name="lineageos.platform.intent.action.PROFILE_SELECTED" />
+                <action android:name="lineageos.platform.intent.action.PROFILE_UPDATED" />
                 <action android:name="cyanogenmod.platform.intent.action.PROFILE_SELECTED" />
                 <action android:name="cyanogenmod.platform.intent.action.PROFILE_UPDATED" />
             </intent-filter>
