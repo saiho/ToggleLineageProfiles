@@ -22,10 +22,10 @@ public final class Common {
     @SuppressLint({"PrivateApi", "ObsoleteSdkInt"})
     private static APIType getCurrentAPIType() {
         try {
-            // It is not possible to get lineageos.os.Build.LINEAGE_VERSION.SDK_INT because when the
-            // LINEAGE_VERSION class is initialized it causes "java.lang.IllegalArgumentException: key.length > 31"
-            // in Android previous to Oreo, due to an internal call to SystemProperties.getInt using a
-            // very long name. That exception cannot be controlled.
+            // In Android previous to Oreo, trying to get lineageos.os.Build.LINEAGE_VERSION.SDK_INT
+            // causes "java.lang.IllegalArgumentException: key.length > 31" because internally,
+            // when the class LINEAGE_VERSION is initialized, SystemProperties.getInt is called using
+            // a very long name. That exception cannot be captured during the class initialization.
             // So we get the property manually controlling the exceptions properly.
             Class<?> systemProperties = Class.forName("android.os.SystemProperties");
             Method getInt = systemProperties.getMethod("getInt", String.class, int.class);
