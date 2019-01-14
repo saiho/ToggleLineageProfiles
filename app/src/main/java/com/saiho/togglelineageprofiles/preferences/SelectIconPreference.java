@@ -8,11 +8,11 @@ import android.graphics.Color;
 import android.os.Parcelable;
 import android.preference.DialogPreference;
 import android.support.annotation.DrawableRes;
-import android.support.v7.widget.AppCompatImageButton;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.GridLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.saiho.togglelineageprofiles.ProfileIconDrawable;
@@ -168,7 +168,7 @@ public class SelectIconPreference extends DialogPreference {
         }
     }
 
-    private class IconView extends AppCompatImageButton {
+    private class IconView extends ImageButton {
         IconView(final Context context, @DrawableRes final int iconId) {
             super(context);
             setScaleType(ImageView.ScaleType.FIT_XY);

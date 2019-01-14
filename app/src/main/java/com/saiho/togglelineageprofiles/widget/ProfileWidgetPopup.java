@@ -1,7 +1,7 @@
 package com.saiho.togglelineageprofiles.widget;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -15,7 +15,7 @@ import static com.saiho.togglelineageprofiles.Common.setCurrentProfile;
 /**
  * Shows a popup with the list of existing profiles. When the user clicks one of them, it is activated.
  */
-public class ProfileWidgetPopup extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
+public class ProfileWidgetPopup extends Activity implements RadioGroup.OnCheckedChangeListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

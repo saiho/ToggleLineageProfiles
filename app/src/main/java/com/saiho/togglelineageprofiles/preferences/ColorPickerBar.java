@@ -8,7 +8,6 @@ import android.graphics.drawable.LayerDrawable;
 import android.support.annotation.FloatRange;
 import android.support.annotation.IntRange;
 import android.support.v4.graphics.ColorUtils;
-import android.support.v7.widget.AppCompatSeekBar;
 import android.util.AttributeSet;
 import android.widget.SeekBar;
 
@@ -26,7 +25,7 @@ import static com.saiho.togglelineageprofiles.preferences.ColorPickerHSLDrawable
  * This class is a customization of the standard SeekBar that allows to select the components of a color (hue,
  * saturation and luminance).
  */
-public class ColorPickerBar extends AppCompatSeekBar implements SeekBar.OnSeekBarChangeListener {
+public class ColorPickerBar extends SeekBar implements SeekBar.OnSeekBarChangeListener {
 
     private static final float MAX_HUE = 360f;
     private static final float MAX_SATURATION = 1f;
