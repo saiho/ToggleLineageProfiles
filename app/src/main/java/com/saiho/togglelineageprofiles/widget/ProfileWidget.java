@@ -10,6 +10,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
 import android.support.v4.graphics.ColorUtils;
+import android.util.TypedValue;
+import android.view.View;
 import android.widget.RemoteViews;
 
 import com.saiho.togglelineageprofiles.ProfileChangeReceiver;
@@ -71,6 +73,22 @@ public class ProfileWidget extends AppWidgetProvider {
         } else {
             views.setTextViewText(R.id.widget_label, context.getString(R.string.widget_no_active_profile));
             views.setImageViewIcon(R.id.widget_icon_image, null);
+        }
+
+        // Show / hide label
+        if (Pref.textSize > 0) {
+            views.setTextViewTextSize(R.id.widget_label, TypedValue.COMPLEX_UNIT_DIP, Pref.textSize);
+            views.setViewVisibility(R.id.widget_label, View.VISIBLE);
+        } else {
+            views.setViewVisibility(R.id.widget_label, View.GONE);
+        }
+
+        // Reduce icon size if preferred
+        if (Pref.smallIcon) {
+            int smallIconPadding = (int) context.getResources().getDimension(R.dimen.small_icon_padding);
+            views.setViewPadding(R.id.widget_icon_frame, smallIconPadding, smallIconPadding, smallIconPadding, smallIconPadding);
+        } else {
+            views.setViewPadding(R.id.widget_icon_frame, 0, 0, 0, 0);
         }
 
         // Set icon colors

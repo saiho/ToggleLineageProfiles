@@ -5,11 +5,17 @@
     <string name="pref_category_profile_icons_title">Profile icons</string>
     <string name="pref_category_colors_title">Icon colors</string>
     <string name="pref_category_profile_notifications_title">Notifications</string>
+    <string name="pref_category_appearance_title">Appearance</string>
     <string name="pref_category_other_title">More settings</string>
     <string name="pref_select_icon_title">Choose icon of \"%s\"</string>
     <string name="pref_foreground_color_title">Choose foreground color of the icons</string>
     <string name="pref_background_color_title">Choose background color of the icons</string>
     <string name="pref_notify_title">Notify when \"%s\" is activated</string>
+    <string name="pref_text_size_title">Text size</string>
+    <string name="pref_text_size_summary">Size of the label shown below the icon: %s.</string>
+    <string name="pref_small_icon_title">Small icon</string>
+    <string name="pref_small_icon_summary_off">The icon of the widget is as big as possible.</string>
+    <string name="pref_small_icon_summary_on">The icon of the widget is slightly smaller.</string>
     <string name="pref_quick_toggle_title">Enable quick toggle</string>
     <string name="pref_quick_toggle_summary_off">When you click in the widget, a popup window will let you choose the new profile to activate.</string>
     <string name="pref_quick_toggle_summary_on">When you click in the widget, the next profile of the list will be activated. By clicking multiple times you advance to desired profile.</string>
@@ -26,4 +32,33 @@
     <string name="msg_disabled_profiles">The system profiles are not active. To activate them go to Settings / System Profiles.</string>
     <string name="msg_no_profiles">There isn´t any system profile defined. To add some profile go to Settings / System Profiles.</string>
     <string name="notification_title">Profile \"%s\" activated</string>
+
+    <string-array name="pref_text_size_entries">
+        <item>Hidden</item>
+        <item>10 dp</item>
+        <item>11 dp</item>
+        <item>12 dp</item>
+        <item>13 dp</item>
+        <item>14 dp</item>
+        <item>15 dp</item>
+        <item>16 dp</item>
+        <item>17 dp</item>
+        <item>18 dp</item>
+        <item>19 dp</item>
+        <item>20 dp</item>
+    </string-array>
+    <string-array name="pref_text_size_values">
+        <item>0</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+    </string-array>
 </resources>

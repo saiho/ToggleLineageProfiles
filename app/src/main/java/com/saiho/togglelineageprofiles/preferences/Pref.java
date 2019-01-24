@@ -34,16 +34,22 @@ public final class Pref {
     static final String KEY_FOREGROUND_COLOR = "foreground_color";
     static final String KEY_BACKGROUND_COLOR = "background_color";
     static final String KEY_QUICK_TOGGLE = "quick_toggle";
+    static final String KEY_TEXT_SIZE = "text_size";
+    static final String KEY_SMALL_ICON = "small_icon";
 
     public static final int DEFAULT_ICON = R.drawable.profile_icon_swatches;
     static final boolean DEFAULT_NOTIFY = false;
     static final boolean DEFAULT_QUICK_TOGGLE = false;
+    static final float DEFAULT_TEXT_SIZE = 14f;
+    static final boolean DEFAULT_SMALL_ICON = false;
 
     public static final HashMap<String, Integer> profileIcons = new HashMap<>();
     public static final ArrayList<String> profileNotify = new ArrayList<>();
     public static int iconBackgroundColor = Color.BLACK;
     public static int iconForegroundColor = Color.WHITE;
     public static boolean quickToggle = DEFAULT_QUICK_TOGGLE;
+    public static float textSize = DEFAULT_TEXT_SIZE;
+    public static boolean smallIcon = DEFAULT_SMALL_ICON;
 
     private static boolean loaded = false;
 
@@ -77,6 +83,8 @@ public final class Pref {
         iconBackgroundColor = preferences.getInt(KEY_BACKGROUND_COLOR, context.getColor(R.color.default_icon_background));
 
         quickToggle = preferences.getBoolean(KEY_QUICK_TOGGLE, DEFAULT_QUICK_TOGGLE);
+        textSize = Float.parseFloat(preferences.getString(KEY_TEXT_SIZE, Float.toString(DEFAULT_TEXT_SIZE)));
+        smallIcon = preferences.getBoolean(KEY_SMALL_ICON, DEFAULT_SMALL_ICON);
     }
 
     /**

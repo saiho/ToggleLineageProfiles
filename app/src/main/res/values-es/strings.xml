@@ -5,11 +5,17 @@
     <string name="pref_category_profile_icons_title">Iconos de los perfiles</string>
     <string name="pref_category_colors_title">Colores de los iconos</string>
     <string name="pref_category_profile_notifications_title">Notificaciones</string>
+    <string name="pref_category_appearance_title">Aspecto</string>
     <string name="pref_category_other_title">Más opciones</string>
     <string name="pref_select_icon_title">Escoge el icono de \"%s\"</string>
     <string name="pref_foreground_color_title">Escoge el color principal de los iconos</string>
     <string name="pref_background_color_title">Escoge el color de fondo de los iconos</string>
     <string name="pref_notify_title">Notificar cuando \"%s\" se activa</string>
+    <string name="pref_text_size_title">Tamaño del texto</string>
+    <string name="pref_text_size_summary">Tamaño la etiqueta mostrada debajo del icono: %s.</string>
+    <string name="pref_small_icon_title">Icono pequeño</string>
+    <string name="pref_small_icon_summary_off">El icono del widget ocupa todo el espacio posible.</string>
+    <string name="pref_small_icon_summary_on">El icono del widget es ligeramente más pequeño.</string>
     <string name="pref_quick_toggle_title">Alternar rápidamente</string>
     <string name="pref_quick_toggle_summary_off">Al hacer click en el widget, una ventana emergente te permitirá elegir el nuevo perfil a activar.</string>
     <string name="pref_quick_toggle_summary_on">Al hacer click en el widget, el siguiente perfil de la lista se activará. Pulsando múltiples veces puedes avanzar hasta el perfil deseado.</string>
@@ -26,4 +32,19 @@
     <string name="msg_disabled_profiles">Los perfiles del sistema no están activos. Para activarlos vaya a Ajustes / Perfiles del Sistema.</string>
     <string name="msg_no_profiles">No hay ningún perfil del sistema definido. Para añadir algún perfil vaya a Ajustes / Perfiles del Sistema.</string>
     <string name="notification_title">El perfil \"%s\" ha sido activado</string>
+
+    <string-array name="pref_text_size_entries">
+        <item>Oculto</item>
+        <item>10 dp</item>
+        <item>11 dp</item>
+        <item>12 dp</item>
+        <item>13 dp</item>
+        <item>14 dp</item>
+        <item>15 dp</item>
+        <item>16 dp</item>
+        <item>17 dp</item>
+        <item>18 dp</item>
+        <item>19 dp</item>
+        <item>20 dp</item>
+    </string-array>
 </resources>

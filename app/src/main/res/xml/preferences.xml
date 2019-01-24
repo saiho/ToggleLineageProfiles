@@ -17,6 +17,20 @@
             android:title="@string/pref_background_color_title"
             app:showTransparencyBar="true" />
     </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_category_appearance_title">
+        <ListPreference
+            android:defaultValue="14"
+            android:entries="@array/pref_text_size_entries"
+            android:entryValues="@array/pref_text_size_values"
+            android:key="text_size"
+            android:summary="@string/pref_text_size_summary"
+            android:title="@string/pref_text_size_title" />
+        <CheckBoxPreference
+            android:key="small_icon"
+            android:summaryOff="@string/pref_small_icon_summary_off"
+            android:summaryOn="@string/pref_small_icon_summary_on"
+            android:title="@string/pref_small_icon_title" />
+    </PreferenceCategory>
     <PreferenceCategory
         android:key="category_profile_notifications"
         android:title="@string/pref_category_profile_notifications_title" />
