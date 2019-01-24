@@ -9,7 +9,6 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
-import android.util.MutableInt;
 import android.widget.BaseAdapter;
 import android.widget.ListAdapter;
 import android.widget.TextView;
@@ -20,6 +19,7 @@ import com.saiho.togglelineageprofiles.widget.ProfileWidget;
 
 import static com.saiho.togglelineageprofiles.Common.checkSystemProfilesStatus;
 import static com.saiho.togglelineageprofiles.Common.getProfileNames;
+import static com.saiho.togglelineageprofiles.Common.checkSystemProfilesStatusMsg;
 
 public class SettingsActivity extends PreferenceActivity {
 
@@ -28,12 +28,11 @@ public class SettingsActivity extends PreferenceActivity {
         super.onCreate(savedInstanceState);
 
         // Check if the system profiles are present and enabled
-        MutableInt profileStatusMsgRef = new MutableInt(0);
-        if (!checkSystemProfilesStatus(this, profileStatusMsgRef)) {
+        if (!checkSystemProfilesStatus(this)) {
             // Show returned error message
             setContentView(R.layout.no_profiles);
             TextView textView = findViewById(R.id.no_profiles_text);
-            textView.setText(profileStatusMsgRef.value);
+            textView.setText(checkSystemProfilesStatusMsg);
             return;
         }
 

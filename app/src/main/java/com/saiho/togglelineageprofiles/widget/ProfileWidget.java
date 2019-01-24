@@ -163,7 +163,7 @@ public class ProfileWidget extends AppWidgetProvider {
         public void onReceive(Context context, Intent intent) {
             Pref.loadContextPreferences(context);
 
-            if (!checkSystemProfilesStatus(context, null)) {
+            if (!checkSystemProfilesStatus(context)) {
                 updateAllAppWidgets(context); // Be sure that the "No active profile" icon is shown
                 return;
             }

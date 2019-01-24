@@ -2,14 +2,17 @@ package com.saiho.togglelineageprofiles;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.support.annotation.StringRes;
 import android.util.Log;
-import android.util.MutableInt;
 
 import java.lang.reflect.Method;
 
 
 public final class Common {
     public static final String LOG_TAG = "LogToggleLineageProf";
+
+    @StringRes
+    public static int checkSystemProfilesStatusMsg = 0;
 
     private enum APIType {
         NONE,
@@ -44,23 +47,24 @@ public final class Common {
 
     /**
      * Check if LineageOS is present, the system profiles are enabled and at least one profile is defined.
+     * <p>
+     * If there is some problem, the string id of a descriptive error is set in the variable checkSystemProfilesStatusMsg. If no error, the
+     * variable checkSystemProfilesStatusMsg is set to zero.
      *
-     * @param context      The context
-     * @param statusMsgRef Returns the resource id of an error message if there is some problem. Otherwise the
-     *                     returning value is set to zero.
+     * @param context The context
      * @return true if all the checks are correct.
      */
-    public static boolean checkSystemProfilesStatus(Context context, MutableInt statusMsgRef) {
+    public static boolean checkSystemProfilesStatus(Context context) {
         switch (currentAPIType) {
             case LINEAGEOS_15: {
                 lineageos.app.ProfileManager pm = lineageos.app.ProfileManager.getInstance(context);
                 if (pm == null || !pm.isProfilesEnabled()) {
-                    if (statusMsgRef != null) statusMsgRef.value = R.string.msg_disabled_profiles;
+                    checkSystemProfilesStatusMsg = R.string.msg_disabled_profiles;
                     return false;
                 } else {
                     String[] profileNames = pm.getProfileNames();
                     if (profileNames == null || profileNames.length == 0) {
-                        if (statusMsgRef != null) statusMsgRef.value = R.string.msg_no_profiles;
+                        checkSystemProfilesStatusMsg = R.string.msg_no_profiles;
                         return false;
                     }
                 }
@@ -69,24 +73,24 @@ public final class Common {
             case CYANOGENMOD_14: {
                 cyanogenmod.app.ProfileManager pm = cyanogenmod.app.ProfileManager.getInstance(context);
                 if (pm == null || !pm.isProfilesEnabled()) {
-                    if (statusMsgRef != null) statusMsgRef.value = R.string.msg_disabled_profiles;
+                    checkSystemProfilesStatusMsg = R.string.msg_disabled_profiles;
                     return false;
                 } else {
                     String[] profileNames = pm.getProfileNames();
                     if (profileNames == null || profileNames.length == 0) {
-                        if (statusMsgRef != null) statusMsgRef.value = R.string.msg_no_profiles;
+                        checkSystemProfilesStatusMsg = R.string.msg_no_profiles;
                         return false;
                     }
                 }
                 break;
             }
             default: {
-                if (statusMsgRef != null) statusMsgRef.value = R.string.msg_no_lineageos;
+                checkSystemProfilesStatusMsg = R.string.msg_no_lineageos;
                 return false;
             }
         }
 
-        if (statusMsgRef != null) statusMsgRef.value = 0;
+        checkSystemProfilesStatusMsg = 0;
         return true;
     }
 
