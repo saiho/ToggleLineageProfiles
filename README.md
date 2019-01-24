@@ -2,7 +2,7 @@
 
 This app allows to quickly toggle any of the system profiles of LineageOS/Cyanogenmod using a widget from the home screen.
 
-It only works if you have LineageOS/Cyanogenmod 13 or higher installed in your device.
+It only works if you have LineageOS/Cyanogenmod 13 or higher installed in your device. Tested up to LineageOS 15.1 (Oreo).
 
 The functionalities are:
 
