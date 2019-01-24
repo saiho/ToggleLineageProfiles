@@ -86,9 +86,15 @@ public class ProfileWidget extends AppWidgetProvider {
         // Reduce icon size if preferred
         if (Pref.smallIcon) {
             int smallIconPadding = (int) context.getResources().getDimension(R.dimen.small_icon_padding);
-            views.setViewPadding(R.id.widget_icon_frame, smallIconPadding, smallIconPadding, smallIconPadding, smallIconPadding);
+            if (Pref.textSize > 0) {
+                views.setViewPadding(R.id.widget_icon_frame, smallIconPadding, smallIconPadding, smallIconPadding, 0);
+                views.setViewPadding(R.id.widget_label, 0, 0, 0, smallIconPadding);
+            } else {
+                views.setViewPadding(R.id.widget_icon_frame, smallIconPadding, smallIconPadding, smallIconPadding, smallIconPadding);
+            }
         } else {
             views.setViewPadding(R.id.widget_icon_frame, 0, 0, 0, 0);
+            views.setViewPadding(R.id.widget_label, 0, 0, 0, 0);
         }
 
         // Set icon colors

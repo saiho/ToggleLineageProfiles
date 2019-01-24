@@ -9,8 +9,8 @@ android {
         applicationId "com.saiho.togglelineageprofiles"
         minSdkVersion 23
         targetSdkVersion 28
-        versionCode 14
-        versionName '1.0.14'
+        versionCode 15
+        versionName '1.0.15'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
