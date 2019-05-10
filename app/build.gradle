@@ -4,19 +4,19 @@ def sourceProfileIconList = new File(buildDir, "generated/source/lists")
 
 android {
     compileSdkVersion 28
-    buildToolsVersion '28.0.3'
+    buildToolsVersion '29.0.0 rc3'
     defaultConfig {
         applicationId "com.saiho.togglelineageprofiles"
         minSdkVersion 23
         targetSdkVersion 28
-        versionCode 15
-        versionName '1.0.15'
+        versionCode 16
+        versionName '1.0.16'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     sourceSets {
