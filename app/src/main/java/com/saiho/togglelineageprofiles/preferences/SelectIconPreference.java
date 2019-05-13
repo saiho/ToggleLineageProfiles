@@ -93,7 +93,7 @@ public class SelectIconPreference extends DialogPreference {
 
         Resources res = getContext().getResources();
         int cellSize = res.getDimensionPixelSize(R.dimen.select_icon_cell_size);
-        int cellPadding = res.getDimensionPixelSize(R.dimen.select_icon_cell_padding);
+        int cellPadding = res.getDimensionPixelOffset(R.dimen.select_icon_cell_padding);
 
         int iconsPerRow = (res.getDisplayMetrics().widthPixels - res.getDimensionPixelSize(R.dimen.dialog_total_screen_margin)) / cellSize;
         if (iconsPerRow < 1) iconsPerRow = 1;
