@@ -12,6 +12,7 @@ The functionalities are:
 * Two ways of switching from one profile to another:
   * Using a popup window that shows the list of existing profiles and lets you select the one to activate.
   * Quick toggle from one profile to the next every time you click in the widget.
+* Put a tile in the quick settings bar for the system profiles. Although this functionality comes already built-in in Lineage OS, some releases seem to lack it.
 
 This app is open source, with no ads and no in-app purchases, but provided with no warranty. Feel free to vote 0 starts if you want :)
 
