@@ -1,6 +1,8 @@
 package com.saiho.togglelineageprofiles.widget;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.RadioButton;
@@ -45,4 +47,15 @@ public class ProfileWidgetPopup extends Activity implements RadioGroup.OnChecked
         setCurrentProfile(this, name);
         finish();
     }
+
+    public static Intent generateIntent(Context context)
+    {
+        Intent popupIntent = new Intent(context, ProfileWidgetPopup.class);
+        popupIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        popupIntent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+        popupIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        popupIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        return popupIntent;
+    }
+
 }

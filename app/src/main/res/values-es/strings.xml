@@ -32,6 +32,7 @@
     <string name="msg_disabled_profiles">Los perfiles del sistema no están activos. Para activarlos vaya a Ajustes / Perfiles del Sistema.</string>
     <string name="msg_no_profiles">No hay ningún perfil del sistema definido. Para añadir algún perfil vaya a Ajustes / Perfiles del Sistema.</string>
     <string name="notification_title">El perfil \"%s\" ha sido activado</string>
+    <string name="quick_settings_label">Cambiar perfiles del sistema</string>
 
     <string-array name="pref_text_size_entries">
         <item>Oculto</item>

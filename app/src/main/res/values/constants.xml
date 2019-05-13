@@ -5,6 +5,7 @@
     <color name="default_icon_background">#C037707D</color>
     <color name="default_icon_foreground">#FFFFFF</color>
     <integer name="quick_toggle_delay_ms">1500</integer>
+    <integer name="quick_settings_icon_crop_border">13</integer>
 
     <!-- margin calculated as android.R.dialog_padding * 2 + extra = 16dp * 2 + 8dp -->
     <dimen name="dialog_total_screen_margin">40dp</dimen>

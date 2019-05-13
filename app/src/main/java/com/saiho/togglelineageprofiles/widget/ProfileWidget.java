@@ -85,7 +85,7 @@ public class ProfileWidget extends AppWidgetProvider {
 
         // Reduce icon size if preferred
         if (Pref.smallIcon) {
-            int smallIconPadding = (int) context.getResources().getDimension(R.dimen.small_icon_padding);
+            int smallIconPadding = context.getResources().getDimensionPixelOffset(R.dimen.small_icon_padding);
             if (Pref.textSize > 0) {
                 views.setViewPadding(R.id.widget_icon_frame, smallIconPadding, smallIconPadding, smallIconPadding, 0);
                 views.setViewPadding(R.id.widget_label, 0, 0, 0, smallIconPadding);
@@ -208,12 +208,7 @@ public class ProfileWidget extends AppWidgetProvider {
                 }
             } else {
                 // If quickToggle is off, show a popup to allow the user select the new profile
-                Intent popupIntent = new Intent(context, ProfileWidgetPopup.class);
-                popupIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                popupIntent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-                popupIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                popupIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(popupIntent);
+                context.startActivity(ProfileWidgetPopup.generateIntent(context));
             }
         }
     }
