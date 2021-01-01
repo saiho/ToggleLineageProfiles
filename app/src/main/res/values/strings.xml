@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Toggle Lineage Profiles</string>
-    <string name="app_description">This app allows to quickly toggle any of the system profiles of LineageOS/Cyanogenmod using a widget from the home screen.</string>
+    <string name="app_description">This app allows to quickly toggle any of the system profiles of LineageOS using a widget from the home screen.</string>
     <string name="pref_category_profile_icons_title">Profile icons</string>
     <string name="pref_category_colors_title">Icon colors</string>
     <string name="pref_category_profile_notifications_title">Notifications</string>
@@ -28,7 +28,7 @@
     <string name="color_picker_alpha">Transparency</string>
     <string name="widget_loading">Loading…</string>
     <string name="widget_no_active_profile">No active profile</string>
-    <string name="msg_no_lineageos">This app works only on Android versions based on LineageOS/Cyanogenmod. Sorry, LineageOS/Cyanogenmod has not been detected.</string>
+    <string name="msg_no_lineageos">This app works only on Android versions based on LineageOS. Sorry, LineageOS has not been detected.</string>
     <string name="msg_disabled_profiles">The system profiles are not active. To activate them go to Settings / System Profiles.</string>
     <string name="msg_no_profiles">There isn´t any system profile defined. To add some profile go to Settings / System Profiles.</string>
     <string name="notification_title">Profile \"%s\" activated</string>

@@ -16,7 +16,6 @@ public final class Common {
 
     private enum APIType {
         NONE,
-        CYANOGENMOD_14, // Cyanogenmod 13 or Lineage 14
         LINEAGEOS_15 // Lineage 15 or higher
     }
 
@@ -38,9 +37,6 @@ public final class Common {
         } catch (Exception e) {
             Log.d(LOG_TAG, "No LineageOS 15 since there was an error getting the SDK level.", e);
         }
-
-        Log.i(LOG_TAG, "CyanogenMod SDK level = " + cyanogenmod.os.Build.CM_VERSION.SDK_INT);
-        if (cyanogenmod.os.Build.CM_VERSION.SDK_INT > 0) return APIType.CYANOGENMOD_14;
 
         return APIType.NONE;
     }
@@ -70,20 +66,6 @@ public final class Common {
                 }
                 break;
             }
-            case CYANOGENMOD_14: {
-                cyanogenmod.app.ProfileManager pm = cyanogenmod.app.ProfileManager.getInstance(context);
-                if (pm == null || !pm.isProfilesEnabled()) {
-                    checkSystemProfilesStatusMsg = R.string.msg_disabled_profiles;
-                    return false;
-                } else {
-                    String[] profileNames = pm.getProfileNames();
-                    if (profileNames == null || profileNames.length == 0) {
-                        checkSystemProfilesStatusMsg = R.string.msg_no_profiles;
-                        return false;
-                    }
-                }
-                break;
-            }
             default: {
                 checkSystemProfilesStatusMsg = R.string.msg_no_lineageos;
                 return false;
@@ -101,11 +83,6 @@ public final class Common {
                 if (pm != null && pm.isProfilesEnabled()) return pm.getProfileNames();
                 break;
             }
-            case CYANOGENMOD_14: {
-                cyanogenmod.app.ProfileManager pm = cyanogenmod.app.ProfileManager.getInstance(context);
-                if (pm != null && pm.isProfilesEnabled()) return pm.getProfileNames();
-                break;
-            }
         }
         return new String[0];
     }
@@ -120,14 +97,6 @@ public final class Common {
                 }
                 break;
             }
-            case CYANOGENMOD_14: {
-                cyanogenmod.app.ProfileManager pm = cyanogenmod.app.ProfileManager.getInstance(context);
-                if (pm != null && pm.isProfilesEnabled()) {
-                    cyanogenmod.app.Profile profile = pm.getActiveProfile();
-                    if (profile != null) return profile.getName();
-                }
-                break;
-            }
         }
         return null;
     }
@@ -137,14 +106,6 @@ public final class Common {
         switch (currentAPIType) {
             case LINEAGEOS_15: {
                 lineageos.app.ProfileManager pm = lineageos.app.ProfileManager.getInstance(context);
-                if (pm != null && pm.isProfilesEnabled()) {
-                    ProfileChangeReceiver.dontNotifyChangedProfile = profileName;
-                    pm.setActiveProfile(profileName);
-                }
-                break;
-            }
-            case CYANOGENMOD_14: {
-                cyanogenmod.app.ProfileManager pm = cyanogenmod.app.ProfileManager.getInstance(context);
                 if (pm != null && pm.isProfilesEnabled()) {
                     ProfileChangeReceiver.dontNotifyChangedProfile = profileName;
                     pm.setActiveProfile(profileName);
