@@ -2,7 +2,7 @@ package com.saiho.togglelineageprofiles;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.support.annotation.StringRes;
+import androidx.annotation.StringRes;
 import android.util.Log;
 
 import java.lang.reflect.Method;

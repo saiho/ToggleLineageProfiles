@@ -28,10 +28,14 @@ android {
     }
     productFlavors {
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    implementation files('libs/lineage-sdk.jar')
+    implementation files('libs/lineage-sdk-17.1-unofficial.jar')
 }
 
 task generateProfileIconList {

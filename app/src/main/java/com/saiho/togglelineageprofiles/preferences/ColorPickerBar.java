@@ -5,9 +5,9 @@ import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
-import android.support.annotation.FloatRange;
-import android.support.annotation.IntRange;
-import android.support.v4.graphics.ColorUtils;
+import androidx.annotation.FloatRange;
+import androidx.annotation.IntRange;
+import androidx.core.graphics.ColorUtils;
 import android.util.AttributeSet;
 import android.widget.SeekBar;
 

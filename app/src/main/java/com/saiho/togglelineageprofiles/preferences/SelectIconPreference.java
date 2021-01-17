@@ -7,7 +7,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Parcelable;
 import android.preference.DialogPreference;
-import android.support.annotation.DrawableRes;
+import androidx.annotation.DrawableRes;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
