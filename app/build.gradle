@@ -7,7 +7,7 @@ android {
     buildToolsVersion '30.0.3'
     defaultConfig {
         applicationId "com.saiho.togglelineageprofiles"
-        minSdkVersion 25
+        minSdkVersion 23
         targetSdkVersion 30
         versionCode 17
         versionName '1.0.17'
@@ -36,6 +36,7 @@ android {
 
 dependencies {
     implementation files('libs/lineage-sdk-17.1-unofficial.jar')
+    implementation 'org.cyanogenmod:platform.sdk:6.0'
 }
 
 task generateProfileIconList {
