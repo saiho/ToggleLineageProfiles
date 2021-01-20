@@ -2,7 +2,9 @@
 
 This app allows to quickly toggle any of the system profiles of LineageOS using a widget from the home screen.
 
-It only works if you have LineageOS 14 or higher installed in your device. Tested up to LineageOS 15.1 (Oreo).
+Only works in devices running LineageOS 14 or higher.
+
+Tested with LineageOS 14.1, LineageOS 16.0 and LineageOS 17.1. Please, report if not working.
 
 The functionalities are:
 
