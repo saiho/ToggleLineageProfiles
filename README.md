@@ -4,7 +4,7 @@ This app allows to quickly toggle any of the system profiles of LineageOS using 
 
 Only works in devices running LineageOS 14 or higher.
 
-Tested with LineageOS 14.1, 16.0, 17.1 and 18.0. Please, report if not working.
+Tested up to LineageOS 18.0. Please, report if not working.
 
 The functionalities are:
 
