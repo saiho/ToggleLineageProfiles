@@ -89,10 +89,10 @@ public class ProfileWidget extends AppWidgetProvider {
         int marginMiddlePixels = (int) (Pref.marginMiddle * density);
         int marginBottomPixels = (int) (Pref.marginBottom * density);
         if (Pref.textSize > 0) {
-            views.setViewPadding(R.id.widget_icon_frame, marginTopPixels, marginTopPixels, marginTopPixels, marginMiddlePixels);
+            views.setViewPadding(R.id.widget_icon_frame, 0, marginTopPixels, 0, marginMiddlePixels);
             views.setViewPadding(R.id.widget_label, 0, 0, 0, marginBottomPixels);
         } else {
-            views.setViewPadding(R.id.widget_icon_frame, marginTopPixels, marginTopPixels, marginTopPixels, marginBottomPixels);
+            views.setViewPadding(R.id.widget_icon_frame, 0, marginTopPixels, 0, marginBottomPixels);
         }
 
         // Set icon colors
