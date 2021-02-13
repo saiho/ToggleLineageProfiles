@@ -15,11 +15,11 @@
     <string name="pref_text_size_title">Text size</string>
     <string name="pref_text_size_summary">Size of the label shown below the icon: %s.</string>
     <string name="pref_margin_top_title">Top margin</string>
-    <string name="pref_margin_top_summary">Extra space above the icon.</string>
+    <string name="pref_margin_top_summary">Extra space above the icon: %s.</string>
     <string name="pref_margin_middle_title">Middle margin</string>
-    <string name="pref_margin_middle_summary">Extra space between the icon and the text.</string>
+    <string name="pref_margin_middle_summary">Extra space between the icon and the text: %s.</string>
     <string name="pref_margin_bottom_title">Bottom margin</string>
-    <string name="pref_margin_bottom_summary">Extra space below the text.</string>
+    <string name="pref_margin_bottom_summary">Extra space below the text: %s.</string>
     <string name="pref_quick_toggle_title">Enable quick toggle</string>
     <string name="pref_quick_toggle_summary_off">When you click in the widget, a popup window will let you choose the new profile to activate.</string>
     <string name="pref_quick_toggle_summary_on">When you click in the widget, the next profile of the list will be activated. By clicking multiple times you advance to desired profile.</string>
@@ -82,6 +82,8 @@
         <item>22 dp</item>
         <item>24 dp</item>
         <item>26 dp</item>
+        <item>28 dp</item>
+        <item>30 dp</item>
     </string-array>
     <string-array name="pref_margin_values">
         <item>0</item>
@@ -98,5 +100,7 @@
         <item>22</item>
         <item>24</item>
         <item>26</item>
+        <item>28</item>
+        <item>30</item>
     </string-array>
 </resources>
