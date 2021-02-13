@@ -103,7 +103,7 @@ public final class Pref {
     }
 
     /**
-     * Loads the stored preferences if they haven´t loaded before.
+     * Loads the stored preferences unless they were already loaded.
      *
      * @param context
      */
@@ -115,9 +115,8 @@ public final class Pref {
     }
 
     /**
-     * Generate a unique key id using the profile name. Actually the profile name itself could be used as key, but as
-     * the profileName is a user entered value, to avoid any risk I prefer using the MD5 value which will never contain
-     * special characters.
+     * Generate a unique key id using the profile name. Since the profile name is a value entered by the user, to avoid the risk of having
+     * special characters, the id is the MD5 value of the name.
      *
      * @param prefix
      * @param profileName
