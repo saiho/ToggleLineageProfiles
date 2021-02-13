@@ -35,13 +35,18 @@ public final class Pref {
     static final String KEY_BACKGROUND_COLOR = "background_color";
     static final String KEY_QUICK_TOGGLE = "quick_toggle";
     static final String KEY_TEXT_SIZE = "text_size";
-    static final String KEY_SMALL_ICON = "small_icon";
+    static final String KEY_MARGIN_TOP = "margin_top";
+    static final String KEY_MARGIN_MIDDLE = "margin_middle";
+    static final String KEY_MARGIN_BOTTOM = "margin_bottom";
+    static final String LEGACY_KEY_SMALL_ICON = "small_icon"; // This settings is removed since version 18
 
     public static final int DEFAULT_ICON = R.drawable.profile_icon_swatches;
     static final boolean DEFAULT_NOTIFY = false;
     static final boolean DEFAULT_QUICK_TOGGLE = false;
     static final float DEFAULT_TEXT_SIZE = 14f;
-    static final boolean DEFAULT_SMALL_ICON = false;
+    static final int DEFAULT_MARGIN_TOP = 0;
+    static final int DEFAULT_MARGIN_MIDDLE = 0;
+    static final int DEFAULT_MARGIN_BOTTOM = 0;
 
     public static final HashMap<String, Integer> profileIcons = new HashMap<>();
     public static final ArrayList<String> profileNotify = new ArrayList<>();
@@ -49,7 +54,9 @@ public final class Pref {
     public static int iconForegroundColor = Color.WHITE;
     public static boolean quickToggle = DEFAULT_QUICK_TOGGLE;
     public static float textSize = DEFAULT_TEXT_SIZE;
-    public static boolean smallIcon = DEFAULT_SMALL_ICON;
+    public static float marginTop = DEFAULT_MARGIN_TOP;
+    public static float marginMiddle = DEFAULT_MARGIN_MIDDLE;
+    public static float marginBottom = DEFAULT_MARGIN_BOTTOM;
 
     private static boolean loaded = false;
 
@@ -79,12 +86,20 @@ public final class Pref {
             }
         }
 
-        iconForegroundColor = preferences.getInt(KEY_FOREGROUND_COLOR, context.getColor(R.color.default_icon_foreground));
-        iconBackgroundColor = preferences.getInt(KEY_BACKGROUND_COLOR, context.getColor(R.color.default_icon_background));
+        try {
+            iconForegroundColor = preferences.getInt(KEY_FOREGROUND_COLOR, context.getColor(R.color.default_icon_foreground));
+            iconBackgroundColor = preferences.getInt(KEY_BACKGROUND_COLOR, context.getColor(R.color.default_icon_background));
+            quickToggle = preferences.getBoolean(KEY_QUICK_TOGGLE, DEFAULT_QUICK_TOGGLE);
+            textSize = Float.parseFloat(preferences.getString(KEY_TEXT_SIZE, Float.toString(DEFAULT_TEXT_SIZE)));
 
-        quickToggle = preferences.getBoolean(KEY_QUICK_TOGGLE, DEFAULT_QUICK_TOGGLE);
-        textSize = Float.parseFloat(preferences.getString(KEY_TEXT_SIZE, Float.toString(DEFAULT_TEXT_SIZE)));
-        smallIcon = preferences.getBoolean(KEY_SMALL_ICON, DEFAULT_SMALL_ICON);
+            // If the legacy  small_icon setting was set, adjust the margins to look the same
+            boolean smallIcon = preferences.getBoolean(LEGACY_KEY_SMALL_ICON, false);
+            marginTop = Integer.parseInt(preferences.getString(KEY_MARGIN_TOP, smallIcon ? "8" : Integer.toString(DEFAULT_MARGIN_TOP)));
+            marginMiddle = Integer.parseInt(preferences.getString(KEY_MARGIN_MIDDLE, smallIcon ? "0" : Integer.toString(DEFAULT_MARGIN_MIDDLE)));
+            marginBottom = Integer.parseInt(preferences.getString(KEY_MARGIN_BOTTOM, smallIcon ? "8" : Integer.toString(DEFAULT_MARGIN_BOTTOM)));
+        } catch (ClassCastException | NumberFormatException e) {
+            Log.w(LOG_TAG, "Invalid saved preference type. Using defaults.", e);
+        }
     }
 
     /**

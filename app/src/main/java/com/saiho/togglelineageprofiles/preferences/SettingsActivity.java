@@ -75,6 +75,8 @@ public class SettingsActivity extends PreferenceActivity {
 
             // Is necessary to load the stored preferences to get the colors of the icons that will be visualized in the preference screen
             Pref.loadContextPreferences(getContext());
+
+            setEnabledInternal();
         }
 
         @Override
@@ -94,6 +96,8 @@ public class SettingsActivity extends PreferenceActivity {
             // Set the Pref.* global variables used in the whole app
             Pref.refreshPreferences(sharedPreferences, getActivity());
 
+            setEnabledInternal();
+
             // Force redrawing the icons in case that the color preferences have changed
             ListAdapter root = getPreferenceScreen().getRootAdapter();
             if (root instanceof BaseAdapter) {
@@ -103,6 +107,13 @@ public class SettingsActivity extends PreferenceActivity {
             // Run methods that depend of preference changes
             ProfileChangeReceiver.refreshManifestState(getActivity());
             ProfileWidget.doPreferencesChanged(getActivity());
+        }
+
+        /**
+         * Set the enabled status of controls that depend of others.
+         */
+        private void setEnabledInternal() {
+            getPreferenceScreen().findPreference(Pref.KEY_MARGIN_MIDDLE).setEnabled(Pref.textSize > 0);
         }
     }
 }

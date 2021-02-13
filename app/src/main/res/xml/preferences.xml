@@ -18,6 +18,9 @@
             app:showTransparencyBar="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/pref_category_appearance_title">
+        <Preference
+            android:selectable="false"
+            android:summary="@string/pref_category_appearance_summary" />
         <ListPreference
             android:defaultValue="14"
             android:entries="@array/pref_text_size_entries"
@@ -25,11 +28,27 @@
             android:key="text_size"
             android:summary="@string/pref_text_size_summary"
             android:title="@string/pref_text_size_title" />
-        <CheckBoxPreference
-            android:key="small_icon"
-            android:summaryOff="@string/pref_small_icon_summary_off"
-            android:summaryOn="@string/pref_small_icon_summary_on"
-            android:title="@string/pref_small_icon_title" />
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/pref_margin_entries"
+            android:entryValues="@array/pref_margin_values"
+            android:key="margin_top"
+            android:summary="@string/pref_margin_top_summary"
+            android:title="@string/pref_margin_top_title" />|
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/pref_margin_entries"
+            android:entryValues="@array/pref_margin_values"
+            android:key="margin_middle"
+            android:summary="@string/pref_margin_middle_summary"
+            android:title="@string/pref_margin_middle_title" />|
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/pref_margin_entries"
+            android:entryValues="@array/pref_margin_values"
+            android:key="margin_bottom"
+            android:summary="@string/pref_margin_bottom_summary"
+            android:title="@string/pref_margin_bottom_title" />|
     </PreferenceCategory>
     <PreferenceCategory
         android:key="category_profile_notifications"

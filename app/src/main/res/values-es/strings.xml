@@ -6,6 +6,7 @@
     <string name="pref_category_colors_title">Colores de los iconos</string>
     <string name="pref_category_profile_notifications_title">Notificaciones</string>
     <string name="pref_category_appearance_title">Aspecto</string>
+    <string name="pref_category_appearance_summary">Los siguientes ajustes controlan el aspecto del widget, con los que puede lograr que el widget se muestre como otros iconos de aplicaciones. Aumente los márgenes para hacer el icono más pequeño. Si aún dejando los márgenes a 0 sucede que el icono del widget es muy pequeño, esto es porque el lanzador (launcher) de Android impone un margen mínimo que no puede ser anulado.</string>
     <string name="pref_category_other_title">Más opciones</string>
     <string name="pref_select_icon_title">Escoge el icono de \"%s\"</string>
     <string name="pref_foreground_color_title">Escoge el color principal de los iconos</string>
@@ -13,9 +14,12 @@
     <string name="pref_notify_title">Notificar cuando \"%s\" se activa</string>
     <string name="pref_text_size_title">Tamaño del texto</string>
     <string name="pref_text_size_summary">Tamaño la etiqueta mostrada debajo del icono: %s.</string>
-    <string name="pref_small_icon_title">Icono pequeño</string>
-    <string name="pref_small_icon_summary_off">El icono del widget ocupa todo el espacio posible.</string>
-    <string name="pref_small_icon_summary_on">El icono del widget es ligeramente más pequeño.</string>
+    <string name="pref_margin_top_title">Margen superior</string>
+    <string name="pref_margin_top_summary">Espacio extra por encima del icono.</string>
+    <string name="pref_margin_middle_title">Margen intermedio</string>
+    <string name="pref_margin_middle_summary">Espacio extra entre el icono y el texto.</string>
+    <string name="pref_margin_bottom_title">Margen inferior</string>
+    <string name="pref_margin_bottom_summary">Espacio extra por debajo del texto.</string>
     <string name="pref_quick_toggle_title">Alternar rápidamente</string>
     <string name="pref_quick_toggle_summary_off">Al hacer click en el widget, una ventana emergente te permitirá elegir el nuevo perfil a activar.</string>
     <string name="pref_quick_toggle_summary_on">Al hacer click en el widget, el siguiente perfil de la lista se activará. Pulsando múltiples veces puedes avanzar hasta el perfil deseado.</string>

@@ -6,6 +6,7 @@
     <string name="pref_category_colors_title">Icon colors</string>
     <string name="pref_category_profile_notifications_title">Notifications</string>
     <string name="pref_category_appearance_title">Appearance</string>
+    <string name="pref_category_appearance_summary">The following settings control the appearance of the widget, allowing it to look like other application icons. Increase the margins to make the icon smaller. If you find that the widget icon is too small, even leaving the margin at 0, that is because the Android launcher imposes a minimum margin that cannot be overridden.</string>
     <string name="pref_category_other_title">More settings</string>
     <string name="pref_select_icon_title">Choose icon of \"%s\"</string>
     <string name="pref_foreground_color_title">Choose foreground color of the icons</string>
@@ -13,9 +14,12 @@
     <string name="pref_notify_title">Notify when \"%s\" is activated</string>
     <string name="pref_text_size_title">Text size</string>
     <string name="pref_text_size_summary">Size of the label shown below the icon: %s.</string>
-    <string name="pref_small_icon_title">Small icon</string>
-    <string name="pref_small_icon_summary_off">The icon of the widget is as big as possible.</string>
-    <string name="pref_small_icon_summary_on">The icon of the widget is slightly smaller.</string>
+    <string name="pref_margin_top_title">Top margin</string>
+    <string name="pref_margin_top_summary">Extra space above the icon.</string>
+    <string name="pref_margin_middle_title">Middle margin</string>
+    <string name="pref_margin_middle_summary">Extra space between the icon and the text.</string>
+    <string name="pref_margin_bottom_title">Bottom margin</string>
+    <string name="pref_margin_bottom_summary">Extra space below the text.</string>
     <string name="pref_quick_toggle_title">Enable quick toggle</string>
     <string name="pref_quick_toggle_summary_off">When you click in the widget, a popup window will let you choose the new profile to activate.</string>
     <string name="pref_quick_toggle_summary_on">When you click in the widget, the next profile of the list will be activated. By clicking multiple times you advance to desired profile.</string>
@@ -61,5 +65,38 @@
         <item>18</item>
         <item>19</item>
         <item>20</item>
+    </string-array>
+
+    <string-array name="pref_margin_entries">
+        <item>0 dp</item>
+        <item>2 dp</item>
+        <item>4 dp</item>
+        <item>6 dp</item>
+        <item>8 dp</item>
+        <item>10 dp</item>
+        <item>12 dp</item>
+        <item>14 dp</item>
+        <item>16 dp</item>
+        <item>18 dp</item>
+        <item>20 dp</item>
+        <item>22 dp</item>
+        <item>24 dp</item>
+        <item>26 dp</item>
+    </string-array>
+    <string-array name="pref_margin_values">
+        <item>0</item>
+        <item>2</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+        <item>20</item>
+        <item>22</item>
+        <item>24</item>
+        <item>26</item>
     </string-array>
 </resources>

@@ -83,18 +83,16 @@ public class ProfileWidget extends AppWidgetProvider {
             views.setViewVisibility(R.id.widget_label, View.GONE);
         }
 
-        // Reduce icon size if preferred
-        if (Pref.smallIcon) {
-            int smallIconPadding = context.getResources().getDimensionPixelOffset(R.dimen.small_icon_padding);
-            if (Pref.textSize > 0) {
-                views.setViewPadding(R.id.widget_icon_frame, smallIconPadding, smallIconPadding, smallIconPadding, 0);
-                views.setViewPadding(R.id.widget_label, 0, 0, 0, smallIconPadding);
-            } else {
-                views.setViewPadding(R.id.widget_icon_frame, smallIconPadding, smallIconPadding, smallIconPadding, smallIconPadding);
-            }
+        // Set margins
+        float density = context.getResources().getDisplayMetrics().density;
+        int marginTopPixels = (int) (Pref.marginTop * density);
+        int marginMiddlePixels = (int) (Pref.marginMiddle * density);
+        int marginBottomPixels = (int) (Pref.marginBottom * density);
+        if (Pref.textSize > 0) {
+            views.setViewPadding(R.id.widget_icon_frame, marginTopPixels, marginTopPixels, marginTopPixels, marginMiddlePixels);
+            views.setViewPadding(R.id.widget_label, 0, 0, 0, marginBottomPixels);
         } else {
-            views.setViewPadding(R.id.widget_icon_frame, 0, 0, 0, 0);
-            views.setViewPadding(R.id.widget_label, 0, 0, 0, 0);
+            views.setViewPadding(R.id.widget_icon_frame, marginTopPixels, marginTopPixels, marginTopPixels, marginBottomPixels);
         }
 
         // Set icon colors
