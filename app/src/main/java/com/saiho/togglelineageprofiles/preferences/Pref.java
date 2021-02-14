@@ -38,7 +38,6 @@ public final class Pref {
     static final String KEY_MARGIN_TOP = "margin_top";
     static final String KEY_MARGIN_MIDDLE = "margin_middle";
     static final String KEY_MARGIN_BOTTOM = "margin_bottom";
-    static final String LEGACY_KEY_SMALL_ICON = "small_icon"; // This settings is removed since version 18
 
     public static final int DEFAULT_ICON = R.drawable.profile_icon_swatches;
     static final boolean DEFAULT_NOTIFY = false;
@@ -54,9 +53,9 @@ public final class Pref {
     public static int iconForegroundColor = Color.WHITE;
     public static boolean quickToggle = DEFAULT_QUICK_TOGGLE;
     public static float textSize = DEFAULT_TEXT_SIZE;
-    public static float marginTop = DEFAULT_MARGIN_TOP;
-    public static float marginMiddle = DEFAULT_MARGIN_MIDDLE;
-    public static float marginBottom = DEFAULT_MARGIN_BOTTOM;
+    public static int marginTop = DEFAULT_MARGIN_TOP;
+    public static int marginMiddle = DEFAULT_MARGIN_MIDDLE;
+    public static int marginBottom = DEFAULT_MARGIN_BOTTOM;
 
     private static boolean loaded = false;
 
@@ -93,10 +92,9 @@ public final class Pref {
             textSize = Float.parseFloat(preferences.getString(KEY_TEXT_SIZE, Float.toString(DEFAULT_TEXT_SIZE)));
 
             // If the legacy  small_icon setting was set, adjust the margins to look the same
-            boolean smallIcon = preferences.getBoolean(LEGACY_KEY_SMALL_ICON, false);
-            marginTop = Integer.parseInt(preferences.getString(KEY_MARGIN_TOP, smallIcon ? "8" : Integer.toString(DEFAULT_MARGIN_TOP)));
-            marginMiddle = Integer.parseInt(preferences.getString(KEY_MARGIN_MIDDLE, smallIcon ? "0" : Integer.toString(DEFAULT_MARGIN_MIDDLE)));
-            marginBottom = Integer.parseInt(preferences.getString(KEY_MARGIN_BOTTOM, smallIcon ? "8" : Integer.toString(DEFAULT_MARGIN_BOTTOM)));
+            marginTop = Integer.parseInt(preferences.getString(KEY_MARGIN_TOP, Integer.toString(DEFAULT_MARGIN_TOP)));
+            marginMiddle = Integer.parseInt(preferences.getString(KEY_MARGIN_MIDDLE, Integer.toString(DEFAULT_MARGIN_MIDDLE)));
+            marginBottom = Integer.parseInt(preferences.getString(KEY_MARGIN_BOTTOM, Integer.toString(DEFAULT_MARGIN_BOTTOM)));
         } catch (ClassCastException | NumberFormatException e) {
             Log.w(LOG_TAG, "Invalid saved preference type. Using defaults.", e);
         }
