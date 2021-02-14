@@ -46,7 +46,7 @@ task generateProfileIconList {
         content += "public final class ProfileIconList {\n"
         content += "public static java.util.HashMap<String, Integer> ids = new java.util.HashMap<>();\n"
         content += "static {\n"
-        file("/src/main/res/drawable-nodpi").listFiles(new FilenameFilter() {
+        file("src/main/res/drawable-nodpi").listFiles(new FilenameFilter() {
             @Override
             boolean accept(File file, String name) {
                 return name.startsWith("profile_icon_") && name.endsWith(".png")
