@@ -1,18 +1,21 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
 
 def sourceProfileIconList = new File(buildDir, "generated/source/lists")
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion '30.0.3'
+    compileSdk 33
+    buildToolsVersion '33.0.0'
     defaultConfig {
         applicationId "com.saiho.togglelineageprofiles"
-        minSdkVersion 23
-        targetSdkVersion 30
-        versionCode 20
-        versionName '1.0.20'
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        minSdk 27
+        targetSdk 33
+        versionCode 21
+        versionName '1.0.21'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled true
@@ -26,17 +29,14 @@ android {
             }
         }
     }
-    productFlavors {
-    }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 }
 
 dependencies {
-    implementation files('libs/lineage-sdk-17.1-unofficial.jar')
-    implementation 'org.cyanogenmod:platform.sdk:6.0'
+    implementation files('libs/lineage-sdk-19.1-unofficial.jar')
 }
 
 task generateProfileIconList {
