@@ -85,9 +85,7 @@ public final class Common {
                 Profile[] profiles = pm.getProfiles();
                 if (profiles != null) {
                     Optional<Profile> optProfile = Arrays.stream(profiles).filter(profile -> profileName.equals(profile.getName())).findFirst();
-                    if (optProfile.isPresent()) {
-                        pm.setActiveProfile(optProfile.get().getUuid());
-                    }
+                    optProfile.ifPresent(profile -> pm.setActiveProfile(profile.getUuid()));
                 }
             }
         }

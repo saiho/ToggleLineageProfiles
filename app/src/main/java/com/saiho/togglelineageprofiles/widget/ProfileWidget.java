@@ -103,7 +103,7 @@ public class ProfileWidget extends AppWidgetProvider {
 
         // Click actions of the widget will be received by ClickReceiver
         Intent notifyIntent = new Intent(context, ClickReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, notifyIntent, PendingIntent.FLAG_IMMUTABLE + PendingIntent.FLAG_UPDATE_CURRENT);
         views.setOnClickPendingIntent(R.id.widget_layout, pendingIntent);
 
         // Refresh widgets on screen

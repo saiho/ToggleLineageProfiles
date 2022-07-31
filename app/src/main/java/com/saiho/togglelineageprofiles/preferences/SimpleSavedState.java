@@ -12,7 +12,7 @@ class SimpleSavedState extends Preference.BaseSavedState {
     // Standard creator object using an instance of this class.
     // It is accessed by the android framework using reflection.
     public static final Parcelable.Creator<SimpleSavedState> CREATOR =
-            new Parcelable.Creator<SimpleSavedState>() {
+            new Parcelable.Creator<>() {
                 public SimpleSavedState createFromParcel(Parcel in) {
                     return new SimpleSavedState(in);
                 }

@@ -174,12 +174,9 @@ public class SelectIconPreference extends DialogPreference {
             setScaleType(ImageView.ScaleType.FIT_XY);
             setBackgroundColor(Color.TRANSPARENT);
             setImageDrawable(new ProfileIconDrawable(context, iconId, false));
-            setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    onSelectIcon(iconId);
-                    getDialog().dismiss();
-                }
+            setOnClickListener(view -> {
+                onSelectIcon(iconId);
+                getDialog().dismiss();
             });
         }
     }

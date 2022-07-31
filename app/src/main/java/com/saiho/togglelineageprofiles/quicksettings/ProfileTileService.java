@@ -1,10 +1,8 @@
 package com.saiho.togglelineageprofiles.quicksettings;
 
-import android.annotation.TargetApi;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Icon;
-import android.os.Build;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 
@@ -16,7 +14,6 @@ import static com.saiho.togglelineageprofiles.Common.checkSystemProfilesStatus;
 import static com.saiho.togglelineageprofiles.Common.getCurrentProfile;
 
 
-@TargetApi(Build.VERSION_CODES.N)
 public class ProfileTileService extends TileService {
     @Override
     public void onStartListening() {

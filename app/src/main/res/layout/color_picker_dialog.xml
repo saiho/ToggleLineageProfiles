@@ -107,7 +107,8 @@
                     android:imeOptions="actionDone"
                     android:inputType="textCapCharacters|textNoSuggestions"
                     android:maxLength="8"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:importantForAutofill="no" />
 
             </FrameLayout>
 
