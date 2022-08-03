@@ -24,6 +24,17 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".api.SetProfile"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:taskAffinity=".api.SetProfile">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
         <receiver
             android:name=".widget.ProfileWidget"
             android:exported="true"
