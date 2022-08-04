@@ -3,7 +3,7 @@ package com.saiho.togglelineageprofiles.api;
 import android.app.Activity;
 import android.os.RemoteException;
 
-import static com.saiho.togglelineageprofiles.Common.setCurrentProfile;
+import static com.saiho.togglelineageprofiles.Common.setActiveProfile;
 
 public class SetProfile extends Activity {
 
@@ -20,7 +20,7 @@ public class SetProfile extends Activity {
 
     private void performTask() throws RemoteException {
         String profileName = getIntent().getStringExtra( PROFILE_NAME );
-        setCurrentProfile( getApplicationContext(), profileName );
+        setActiveProfile( getApplicationContext(), profileName );
         finish();
     }
 }

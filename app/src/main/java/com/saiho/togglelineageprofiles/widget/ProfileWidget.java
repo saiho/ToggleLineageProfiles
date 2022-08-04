@@ -21,7 +21,7 @@ import com.saiho.togglelineageprofiles.preferences.Pref;
 import static com.saiho.togglelineageprofiles.Common.checkSystemProfilesStatus;
 import static com.saiho.togglelineageprofiles.Common.getCurrentProfile;
 import static com.saiho.togglelineageprofiles.Common.getProfileNames;
-import static com.saiho.togglelineageprofiles.Common.setCurrentProfile;
+import static com.saiho.togglelineageprofiles.Common.setActiveProfile;
 
 public class ProfileWidget extends AppWidgetProvider {
 
@@ -224,7 +224,7 @@ public class ProfileWidget extends AppWidgetProvider {
 
         @Override
         public void run() {
-            setCurrentProfile(context, delayedProfile);
+            setActiveProfile(context, delayedProfile);
         }
     }
 }

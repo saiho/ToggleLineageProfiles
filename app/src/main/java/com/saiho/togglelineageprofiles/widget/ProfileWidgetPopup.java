@@ -12,7 +12,7 @@ import com.saiho.togglelineageprofiles.R;
 
 import static com.saiho.togglelineageprofiles.Common.getCurrentProfile;
 import static com.saiho.togglelineageprofiles.Common.getProfileNames;
-import static com.saiho.togglelineageprofiles.Common.setCurrentProfile;
+import static com.saiho.togglelineageprofiles.Common.setActiveProfile;
 
 /**
  * Shows a popup with the list of existing profiles. When the user clicks one of them, it is activated.
@@ -44,7 +44,7 @@ public class ProfileWidgetPopup extends Activity implements RadioGroup.OnChecked
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         RadioButton radioButton = group.findViewById(checkedId);
         String name = radioButton.getText().toString();
-        setCurrentProfile(this, name);
+        setActiveProfile(this, name);
         finish();
     }
 
