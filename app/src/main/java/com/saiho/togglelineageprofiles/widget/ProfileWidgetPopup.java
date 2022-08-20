@@ -24,6 +24,7 @@ public class ProfileWidgetPopup extends Activity implements RadioGroup.OnChecked
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.widget_popup);
+        setShowWhenLocked(true);
         getWindow().setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL);
 
         RadioGroup radioGroup = findViewById(R.id.widget_popup_radiogroup);
