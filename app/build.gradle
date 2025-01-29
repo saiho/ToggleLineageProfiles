@@ -1,18 +1,19 @@
 plugins {
-    id 'com.android.application'
+    alias(libs.plugins.android.application)
 }
 
-def sourceProfileIconList = new File(buildDir, "generated/source/lists")
+def sourceProfileIconList = getLayout().getBuildDirectory().dir("generated/source/lists").get()
 
 android {
-    compileSdk 33
-    buildToolsVersion '33.0.0'
+    namespace 'com.saiho.togglelineageprofiles'
+    compileSdk 35
+
     defaultConfig {
         applicationId "com.saiho.togglelineageprofiles"
-        minSdk 27
-        targetSdk 33
-        versionCode 21
-        versionName '1.0.21'
+        minSdk 33
+        targetSdk 35
+        versionCode 1
+        versionName '1.0.22'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -36,31 +37,29 @@ android {
 }
 
 dependencies {
-    implementation files('libs/lineage-sdk-19.1-unofficial.jar')
+    implementation libs.material
+    implementation files('libs/lineage-sdk-22.1-unofficial.jar')
 }
 
-task generateProfileIconList {
+tasks.register('generateProfileIconList') {
     doLast {
         println "Generating ProfileIconList.java"
-        def content = "package com.saiho.togglelineageprofiles;\n"
-        content += "public final class ProfileIconList {\n"
-        content += "public static java.util.HashMap<String, Integer> ids = new java.util.HashMap<>();\n"
-        content += "static {\n"
-        file("src/main/res/drawable-nodpi").listFiles(new FilenameFilter() {
-            @Override
-            boolean accept(File file, String name) {
-                return name.startsWith("profile_icon_") && name.endsWith(".png")
+        def content = '''\
+            package com.saiho.togglelineageprofiles;
+            public final class ProfileIconList {
+            public static java.util.HashMap<String, Integer> ids = new java.util.HashMap<>();
+            static {'''.stripIndent()
+        file("src/main/res/drawable-nodpi")
+            .listFiles((FilenameFilter) (file, name) -> name.startsWith("profile_icon_") && name.endsWith(".png"))
+            .each {
+                def fileName = it.name[0..it.name.length() - 5]
+                content += "ids.put(\"" + fileName + "\", R.drawable." + fileName + ");\n"
             }
-        }).each {
-            def fileName = it.name[0..it.name.length() - 5]
-            content += "ids.put(\"" + fileName + "\", R.drawable." + fileName + ");\n"
-        }
-        content += "};\n"
-        content += "}"
+        content += "};\n}"
 
-        def dir = new File(sourceProfileIconList, "com/saiho/togglelineageprofiles")
-        dir.mkdirs()
-        new File(dir, "ProfileIconList.java").text = content
+        def packageDir = sourceProfileIconList.dir("com/saiho/togglelineageprofiles")
+        mkdir packageDir
+        packageDir.file("ProfileIconList.java").asFile.text = content
     }
 }
-preBuild.dependsOn generateProfileIconList
+preBuild.dependsOn 'generateProfileIconList'

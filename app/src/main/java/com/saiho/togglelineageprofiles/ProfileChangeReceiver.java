@@ -25,7 +25,7 @@ public class ProfileChangeReceiver extends BroadcastReceiver {
 
     public static void refreshManifestState(Context context) {
         int newState;
-        if (Pref.profileNotify.size() > 0 || ProfileWidget.isVisible(context)) {
+        if (!Pref.profileNotify.isEmpty() || ProfileWidget.isVisible(context)) {
             if (cachedManifestStateEnabled != null && cachedManifestStateEnabled) return;
             cachedManifestStateEnabled = true;
             newState = PackageManager.COMPONENT_ENABLED_STATE_ENABLED;
@@ -51,7 +51,7 @@ public class ProfileChangeReceiver extends BroadcastReceiver {
     }
 
     private void showNotification(Context context) {
-        if (Pref.profileNotify.size() == 0) return;
+        if (Pref.profileNotify.isEmpty()) return;
 
         String currentProfile = getCurrentProfile(context);
         if (currentProfile == null) return;
@@ -69,7 +69,6 @@ public class ProfileChangeReceiver extends BroadcastReceiver {
                         context.getResources().getDimensionPixelSize(android.R.dimen.notification_large_icon_width),
                         context.getResources().getDimensionPixelSize(android.R.dimen.notification_large_icon_height));
 
-                @SuppressWarnings("deprecation")
                 Notification notification = new Notification.Builder(context)
                         .setContentTitle(context.getString(R.string.notification_title, currentProfile))
                         .setSmallIcon(R.drawable.notification_icon)

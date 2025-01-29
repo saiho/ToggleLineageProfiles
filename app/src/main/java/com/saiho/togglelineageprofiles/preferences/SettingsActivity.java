@@ -21,7 +21,6 @@ import static com.saiho.togglelineageprofiles.Common.checkSystemProfilesStatus;
 import static com.saiho.togglelineageprofiles.Common.getProfileNames;
 import static com.saiho.togglelineageprofiles.Common.checkSystemProfilesStatusMsg;
 
-@SuppressWarnings("deprecation")
 public class SettingsActivity extends PreferenceActivity {
 
     @Override
