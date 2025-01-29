@@ -25,7 +25,9 @@ public final class Common {
     private static boolean checkCompatibleLineage() {
         Log.i(LOG_TAG, "LineageOS version = " + Build.LINEAGEOS_VERSION + " (" + Build.LINEAGEOS_DISPLAY_VERSION + ")");
         Log.i(LOG_TAG, "LineageOS SDK level = " + Build.LINEAGE_VERSION.SDK_INT);
-        return Build.LINEAGE_VERSION.SDK_INT >= Build.LINEAGE_VERSION_CODES.HACKBERRY;
+        return Build.LINEAGE_VERSION.SDK_INT >= Build.LINEAGE_VERSION_CODES.HACKBERRY ||
+                // Lineage 22.1 incorrectly reports SDK_INT as 0, so now the check is softened
+                (Build.LINEAGEOS_VERSION != null && !Build.LINEAGEOS_VERSION.isBlank());
     }
 
     /**
