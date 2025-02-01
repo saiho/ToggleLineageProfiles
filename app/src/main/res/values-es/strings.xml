@@ -40,6 +40,7 @@
     <string name="error_get_list_profiles">Error obteniendo la lista de perfiles: %s</string>
     <string name="error_get_active_profile">Error obteniendo el perfil activo: %s</string>
     <string name="error_set_active_profile">Error activando el perfil "%s": %s</string>
+    <string name="notification_channel">Cambio de perfil</string>
 
     <string-array name="pref_text_size_entries">
         <item>Oculto</item>

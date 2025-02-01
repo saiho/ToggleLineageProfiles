@@ -17,6 +17,9 @@ import com.saiho.togglelineageprofiles.ProfileChangeReceiver;
 import com.saiho.togglelineageprofiles.R;
 import com.saiho.togglelineageprofiles.widget.ProfileWidget;
 
+import static android.content.pm.PackageManager.PERMISSION_GRANTED;
+import static android.Manifest.permission.POST_NOTIFICATIONS;
+
 import static com.saiho.togglelineageprofiles.Common.checkSystemProfilesStatus;
 import static com.saiho.togglelineageprofiles.Common.getProfileNames;
 import static com.saiho.togglelineageprofiles.Common.checkSystemProfilesStatusMsg;
@@ -69,6 +72,12 @@ public class SettingsActivity extends PreferenceActivity {
                 notifyPref.setDefaultValue(Pref.DEFAULT_NOTIFY);
                 notifyPref.setKey(Pref.buildProfilePrefKey(Pref.KEY_PREFIX_NOTIFY, name));
                 notifyPref.setTitle(getString(R.string.pref_notify_title, name));
+                notifyPref.setOnPreferenceChangeListener((preference, newValue) -> {
+                    if (context.checkSelfPermission(POST_NOTIFICATIONS) != PERMISSION_GRANTED) {
+                        requestPermissions(new String[] { POST_NOTIFICATIONS }, 1);
+                    }
+                    return true;
+                });
                 notificationsCategory.addPreference(notifyPref);
             }
 

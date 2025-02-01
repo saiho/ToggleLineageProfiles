@@ -1,6 +1,7 @@
 package com.saiho.togglelineageprofiles;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -19,9 +20,13 @@ import static com.saiho.togglelineageprofiles.Common.getCurrentProfile;
 public class ProfileChangeReceiver extends BroadcastReceiver {
 
     public static final int NOTIFICATION_ID_PROFILE_CHANGED = 1;
+    public static final String NOTIFICATION_CHANNEL_ID = "main_channel";
+
     public static String dontNotifyChangedProfile = null;
 
     private static Boolean cachedManifestStateEnabled = null;
+
+    private static boolean channelCreated = false;
 
     public static void refreshManifestState(Context context) {
         int newState;
@@ -69,11 +74,18 @@ public class ProfileChangeReceiver extends BroadcastReceiver {
                         context.getResources().getDimensionPixelSize(android.R.dimen.notification_large_icon_width),
                         context.getResources().getDimensionPixelSize(android.R.dimen.notification_large_icon_height));
 
+                if (!channelCreated) {
+                    NotificationChannel channel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, context.getString(R.string.notification_channel), NotificationManager.IMPORTANCE_DEFAULT);
+                    nm.createNotificationChannel(channel);
+                    channelCreated = true;
+                }
+
                 Notification notification = new Notification.Builder(context)
                         .setContentTitle(context.getString(R.string.notification_title, currentProfile))
                         .setSmallIcon(R.drawable.notification_icon)
                         .setLargeIcon(iconBitmap)
                         .setAutoCancel(true)
+                        .setChannelId(NOTIFICATION_CHANNEL_ID)
                         .build();
 
                 nm.notify(NOTIFICATION_ID_PROFILE_CHANGED, notification);
