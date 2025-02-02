@@ -1,8 +1,11 @@
 package com.saiho.togglelineageprofiles.quicksettings;
 
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Icon;
+import android.os.Build;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 
@@ -57,6 +60,12 @@ public class ProfileTileService extends TileService {
 
         Pref.loadContextPreferences(this);
 
-        startActivityAndCollapse(ProfileWidgetPopup.generateIntent(this));
+        Intent intent = ProfileWidgetPopup.generateIntent(this);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_IMMUTABLE);
+            startActivityAndCollapse(pendingIntent);
+        } else {
+            startActivityAndCollapse(intent);
+        }
     }
 }
