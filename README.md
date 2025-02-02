@@ -2,9 +2,7 @@
 
 This app allows to quickly toggle any of the system profiles of LineageOS using a widget from the home screen.
 
-Only works in devices running LineageOS 15 or higher.
-
-Tested up to LineageOS 19.1. Please, report if not working.
+Current version works in devices running LineageOS 20 or higher (tested up to LineageOS 22.1). Older versions can work with LineageOS < 20. Check the readme of each tag to find exactly the tested versions of LineageOS.
 
 The functionalities are:
 
@@ -17,11 +15,6 @@ The functionalities are:
 * Put a tile in the quick settings bar for the system profiles. Although this functionality comes already built-in in Lineage OS, some releases seem to lack it.
 
 This app is open source, with no ads and no in-app purchases, but provided with no warranty. Feel free to vote 0 starts if you want :)
-
-
-## Install from play store
-
-https://play.google.com/store/apps/details?id=com.saiho.togglelineageprofiles
 
 
 ## Thanks to
