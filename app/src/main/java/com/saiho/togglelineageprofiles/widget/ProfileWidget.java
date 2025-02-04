@@ -9,7 +9,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
-import androidx.core.graphics.ColorUtils;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.RemoteViews;
@@ -22,6 +21,8 @@ import static com.saiho.togglelineageprofiles.Common.checkSystemProfilesStatus;
 import static com.saiho.togglelineageprofiles.Common.getCurrentProfile;
 import static com.saiho.togglelineageprofiles.Common.getProfileNames;
 import static com.saiho.togglelineageprofiles.Common.setActiveProfile;
+
+import lineageos.util.palette.ColorUtils;
 
 public class ProfileWidget extends AppWidgetProvider {
 

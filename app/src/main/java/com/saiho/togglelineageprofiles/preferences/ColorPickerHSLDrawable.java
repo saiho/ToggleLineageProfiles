@@ -11,12 +11,13 @@ import android.graphics.PixelFormat;
 import android.graphics.Rect;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
-import androidx.annotation.ColorInt;
-import androidx.annotation.FloatRange;
-import androidx.annotation.IntRange;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.graphics.ColorUtils;
+import android.annotation.ColorInt;
+import android.annotation.FloatRange;
+import android.annotation.IntRange;
+import android.annotation.NonNull;
+import android.annotation.Nullable;
+
+import lineageos.util.palette.ColorUtils;
 
 /**
  * Helper drawable for ColorPickerBar and ColorPickerPreference. It draws a gradient of colors where two components

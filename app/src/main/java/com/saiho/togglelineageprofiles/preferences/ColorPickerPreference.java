@@ -7,8 +7,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Parcelable;
 import android.preference.DialogPreference;
-import androidx.annotation.ColorInt;
-import androidx.core.graphics.ColorUtils;
+import android.annotation.ColorInt;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
@@ -21,6 +20,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.saiho.togglelineageprofiles.R;
+
+import lineageos.util.palette.ColorUtils;
 
 /**
  * This preference allows the user to choose a color opening a dialog window.

@@ -5,9 +5,8 @@ import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
-import androidx.annotation.FloatRange;
-import androidx.annotation.IntRange;
-import androidx.core.graphics.ColorUtils;
+import android.annotation.FloatRange;
+import android.annotation.IntRange;
 import android.util.AttributeSet;
 import android.widget.SeekBar;
 
@@ -20,6 +19,8 @@ import static com.saiho.togglelineageprofiles.preferences.ColorPickerHSLDrawable
 import static com.saiho.togglelineageprofiles.preferences.ColorPickerHSLDrawable.HUE_COMPONENT;
 import static com.saiho.togglelineageprofiles.preferences.ColorPickerHSLDrawable.LUMINANCE_COMPONENT;
 import static com.saiho.togglelineageprofiles.preferences.ColorPickerHSLDrawable.SATURATION_COMPONENT;
+
+import lineageos.util.palette.ColorUtils;
 
 /**
  * This class is a customization of the standard SeekBar that allows to select the components of a color (hue,

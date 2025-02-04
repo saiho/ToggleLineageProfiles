@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
-import androidx.annotation.StringRes;
+import android.annotation.StringRes;
 
 import java.util.Arrays;
 import java.util.Optional;

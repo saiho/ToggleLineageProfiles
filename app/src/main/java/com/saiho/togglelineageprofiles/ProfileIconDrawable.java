@@ -10,9 +10,9 @@ import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
-import androidx.annotation.AttrRes;
-import androidx.annotation.ColorInt;
-import androidx.annotation.DrawableRes;
+import android.annotation.AttrRes;
+import android.annotation.ColorInt;
+import android.annotation.DrawableRes;
 
 import com.saiho.togglelineageprofiles.preferences.Pref;
 
